@@ -60,3 +60,26 @@ export const ButtonWrapper = styled("div")`
     margin-left: 20px;
   }
 `;
+
+// 👇 NOUVEAU STYLE POUR LES IMAGES ARRONDIES
+export const RoundedImageWrapper = styled.div<{ shouldRound?: boolean }>`
+  img {
+    border-radius: ${({ shouldRound }) => shouldRound ? '20px' : '0px'};
+    box-shadow: ${({ shouldRound }) => 
+      shouldRound ? '0 12px 40px rgba(0, 0, 0, 0.15)' : 'none'};
+    transition: all 0.3s ease-in-out;
+    
+    &:hover {
+      transform: ${({ shouldRound }) => 
+        shouldRound ? 'scale(1.02)' : 'none'};
+      box-shadow: ${({ shouldRound }) => 
+        shouldRound ? '0 16px 50px rgba(0, 0, 0, 0.2)' : 'none'};
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    img {
+      border-radius: ${({ shouldRound }) => shouldRound ? '15px' : '0px'};
+    }
+  }
+`;

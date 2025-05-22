@@ -14,6 +14,7 @@ import {
   MinPara,
   StyledRow,
   ButtonWrapper,
+  RoundedImageWrapper, // 👈 NOUVEAU IMPORT
 } from "./styles";
 
 const ContentBlock = ({
@@ -33,6 +34,9 @@ const ContentBlock = ({
     });
   };
 
+  // 👇 NOUVEAU : Détermine si l'image doit être arrondie
+  const shouldRoundImage = icon === "mission.jpeg" || icon === "pic_alina_calling.jpeg";
+
   return (
     <ContentSection>
       <Fade direction={direction} triggerOnce>
@@ -43,7 +47,9 @@ const ContentBlock = ({
           direction={direction}
         >
           <Col lg={11} md={11} sm={12} xs={24}>
-            <SvgIcon src={icon} width="100%" height="100%" />
+            <RoundedImageWrapper shouldRound={shouldRoundImage}>
+              <SvgIcon src={icon} width="100%" height="100%" />
+            </RoundedImageWrapper>
           </Col>
           <Col lg={11} md={11} sm={11} xs={24}>
             <ContentWrapper>
