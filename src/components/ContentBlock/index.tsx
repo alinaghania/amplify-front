@@ -34,7 +34,7 @@ const ContentBlock = ({
     });
   };
 
-  // 👇 NOUVEAU : Détermine si l'image doit être arrondie
+  //  Détermine si l'image doit être arrondie 
   const shouldRoundImage = icon === "mission.jpeg" || icon === "pic_alina_calling.jpeg" || icon === "ali_phone.jpeg";
 
   return (

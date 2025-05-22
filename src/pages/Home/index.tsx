@@ -1,4 +1,4 @@
-// src/pages/Home/index.tsx - REMPLACE TOUT LE CONTENU PAR ÇA
+// src/pages/Home/index.tsx - REMPLACE TOUT LE CONTENU
 import { lazy } from "react";
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
@@ -13,6 +13,7 @@ const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 const PartnersBanner = lazy(() => import("../../components/PartnersBanner"));
+const AudioPlayer = lazy(() => import("../../components/AudioPlayer")); // 👈 NOUVEAU
 
 const Home = () => {
   return (
@@ -44,7 +45,7 @@ const Home = () => {
         direction="right"
         title={MissionContent.title}
         content={MissionContent.text}
-        icon="mission.jpeg" // ou ali_phone.jpeg ou mission.jpeg, ali_phone.jpeg si on veut un truck noir et blanc et mission.jpeg si on veut un truck coloré
+        icon="mission.jpeg"
         id="mission"
       />
       <ContentBlock
@@ -59,6 +60,7 @@ const Home = () => {
         content={ContactContent.text}
         id="contact"
       />
+      <AudioPlayer /> {/* 👈 NOUVEAU COMPOSANT */}
     </Container>
   );
 };
