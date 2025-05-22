@@ -52,42 +52,46 @@ const Footer = ({ t }: { t: TFunction }) => {
           <Row justify="space-between">
             <Col lg={10} md={10} sm={12} xs={12}>
               <Language>{t("Contact")}</Language>
-              <Large to="/">{t("Tell us everything")}</Large>
+              <Large to="/">{t("Dites-nous tout")}</Large>
               <Para>
-                {t(`Do you have any question? Feel free to reach out.`)}
+                {t(`Vous avez une question ? N'hésitez pas à nous contacter.`)}
               </Para>
-              <a href="mailto:l.qqbadze@gmail.com">
-                <Chat>{t(`Let's Chat`)}</Chat>
+              <a href="amplify@gmail.com">
+                <Chat>{t(`Discutons`)}</Chat>
               </a>
             </Col>
             <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Policy")}</Title>
-              <Large to="/">{t("Application Security")}</Large>
-              <Large to="/">{t("Software Principles")}</Large>
+              <Title>{t("Politique")}</Title>
+              <Large to="/">{t("Sécurité des Applications")}</Large>
+              <Large to="/">{t("Principes du Logiciel")}</Large>
             </Col>
             <Col lg={6} md={6} sm={12} xs={12}>
               <Empty />
-              <Large to="/">{t("Support Center")}</Large>
-              <Large to="/">{t("Customer Support")}</Large>
+              <Large to="/">{t("Centre d'Assistance")}</Large>
+              <Large to="/">{t("Service Client")}</Large>
             </Col>
           </Row>
           <Row justify="space-between">
             <Col lg={10} md={10} sm={12} xs={12}>
               <Empty />
-              <Language>{t("Address")}</Language>
+              {/* <Language>{t("Address")}</Language>
               <Para>Rancho Santa Margarita</Para>
               <Para>2131 Elk Street</Para>
-              <Para>California</Para>
+              <Para>California</Para> */}
+              <Language>Adresse</Language>
+              <Para>3 Boulevard du Général d'Armée Jean Simon</Para>
+              <Para>75 013 Paris</Para>
+              <Para>France</Para>
             </Col>
             <Col lg={8} md={8} sm={12} xs={12}>
-              <Title>{t("Company")}</Title>
-              <Large to="/">{t("About")}</Large>
+              <Title>{t("Entreprise")}</Title>
+              <Large to="/">{t("À propos")}</Large>
               <Large to="/">{t("Blog")}</Large>
-              <Large to="/">{t("Press")}</Large>
-              <Large to="/">{t("Careers & Culture")}</Large>
+              <Large to="/">{t("Presse")}</Large>
+              <Large to="/">{t("Carrières & Culture")}</Large>
             </Col>
             <Col lg={6} md={6} sm={12} xs={12}>
-              <Label htmlFor="select-lang">{t("Language")}</Label>
+              <Label htmlFor="select-lang">{t("Langue")}</Label>
               <LanguageSwitchContainer>
                 <LanguageSwitch onClick={() => handleChange("en")}>
                   <SvgIcon
@@ -110,56 +114,6 @@ const Footer = ({ t }: { t: TFunction }) => {
           </Row>
         </Container>
       </FooterSection>
-      <Extra>
-        <Container border={true}>
-          <Row
-            justify="space-between"
-            align="middle"
-            style={{ paddingTop: "3rem" }}
-          >
-            <NavLink to="/">
-              <LogoContainer>
-                <SvgIcon
-                  src="logo.svg"
-                  aria-label="homepage"
-                  width="101px"
-                  height="64px"
-                />
-              </LogoContainer>
-            </NavLink>
-            <FooterContainer>
-              <SocialLink
-                href="https://github.com/Adrinlol/create-react-app-adrinlol"
-                src="github.svg"
-              />
-              <SocialLink
-                href="https://twitter.com/Adrinlolx"
-                src="twitter.svg"
-              />
-              <SocialLink
-                href="https://www.linkedin.com/in/lasha-kakabadze/"
-                src="linkedin.svg"
-              />
-              <SocialLink
-                href="https://medium.com/@lashakakabadze/"
-                src="medium.svg"
-              />
-              <a
-                href="https://ko-fi.com/Y8Y7H8BNJ"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  height="36"
-                  style={{ border: 0, height: 36 }}
-                  src="https://storage.ko-fi.com/cdn/kofi3.png?v=3"
-                  alt="Buy Me a Coffee at ko-fi.com"
-                />
-              </a>
-            </FooterContainer>
-          </Row>
-        </Container>
-      </Extra>
     </>
   );
 };

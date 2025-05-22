@@ -1,15 +1,15 @@
 {
-  "title": "Light, fast & responsive",
-  "text": "This template is ready to use, so you don't need to change anything at a component level, unless you want to customize the default styling.",
+  "title": "Qui sommes-nous ?",
+  "text": "Amplify conçoit des voice bots performants pour aider les restaurants – et notamment les pizzerias – à gérer leurs appels entrants sans effort. Notre technologie permet de prendre des commandes, répondre aux questions fréquentes et améliorer le service client.",
   "section": [
     {
-      "title": "Why Antd?",
-      "content": "Ant Design is a React UI library that has a lot of easy-to-use components for building elegant UI.",
+      "title": "Pourquoi choisir Amplify ?",
+      "content": "Notre assistant vocal s’adapte à votre menu et à vos besoins. Il est rapide, précis et toujours disponible.",
       "icon": "notes.svg"
     },
     {
-      "title": "Why styled-components?",
-      "content": "Styled Components gives you total control over your components.",
+      "title": "Un service sur-mesure",
+      "content": "Nous travaillons main dans la main avec chaque client pour que l’expérience vocale soit parfaite.",
       "icon": "notes.svg"
     }
   ]

@@ -1,3 +1,4 @@
+// src/pages/Home/index.tsx - REMPLACE TOUT LE CONTENU PAR ÇA
 import { lazy } from "react";
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
@@ -11,6 +12,7 @@ const MiddleBlock = lazy(() => import("../../components/MiddleBlock"));
 const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
+const PartnersBanner = lazy(() => import("../../components/PartnersBanner"));
 
 const Home = () => {
   return (
@@ -24,6 +26,7 @@ const Home = () => {
         icon="developer.svg"
         id="intro"
       />
+      <PartnersBanner />
       <MiddleBlock
         title={MiddleBlockContent.title}
         content={MiddleBlockContent.text}

@@ -1,12 +1,12 @@
 {
-  "title": "Landing page template for developers & startups",
-  "text": "Beautifully designed templates using React.js, ant design and styled-components! Save weeks of time and build your landing page in minutes.",
+  "title": "Amplify - Voice bots pour les pizzerias",
+  "text": "Automatisez vos commandes par téléphone grâce à un assistant vocal intelligent et ultra-réactif.",
   "button": [
     {
-      "title": "Explore"
+      "title": "Demander une démo"
     },
     {
-      "title": "Learn more",
+      "title": "En savoir plus",
       "color": "#fff"
     }
   ]
