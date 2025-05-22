@@ -44,7 +44,7 @@ const Home = () => {
         direction="right"
         title={MissionContent.title}
         content={MissionContent.text}
-        icon="mission.jpeg"
+        icon="mission.jpeg" // ou ali_phone.jpeg ou mission.jpeg, ali_phone.jpeg si on veut un truck noir et blanc et mission.jpeg si on veut un truck coloré
         id="mission"
       />
       <ContentBlock
