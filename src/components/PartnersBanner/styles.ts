@@ -1,4 +1,4 @@
-// src/components/PartnersBanner/styles.ts
+// src/components/PartnersBanner/styles.ts - REMPLACE TOUT LE CONTENU
 import styled, { keyframes } from 'styled-components';
 
 const scroll = keyframes`
@@ -11,7 +11,7 @@ const scroll = keyframes`
 `;
 
 export const PartnersSection = styled.section`
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  background: linear-gradient(135deg, #F8FAFC 0%, rgba(255, 230, 109, 0.1) 50%, #F1F5F9 100%);
   padding: 4rem 0;
   overflow: hidden;
   position: relative;
@@ -23,7 +23,7 @@ export const PartnersSection = styled.section`
     left: 0;
     right: 0;
     bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fe7624' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF6B6B' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
     pointer-events: none;
   }
 
@@ -44,7 +44,7 @@ export const Title = styled.h3`
   text-align: center;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 700;
-  color: #2e186a;
+  color: #1E293B;
   margin-bottom: 3rem;
   position: relative;
   
@@ -56,7 +56,7 @@ export const Title = styled.h3`
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: linear-gradient(90deg, #fe7624, #ff8c5c);
+    background: linear-gradient(90deg, #FF6B6B, #4ECDC4);
     border-radius: 2px;
   }
 
@@ -80,7 +80,7 @@ export const LogosContainer = styled.div`
 export const LogosWrapper = styled.div`
   display: flex;
   animation: ${scroll} 25s linear infinite;
-  width: calc(220px * 12); /* 6 logos * 2 (duplicate) * 220px width */
+  width: calc(220px * 16);
   
   &:hover {
     animation-play-state: paused;
@@ -98,15 +98,15 @@ export const LogoItem = styled.div`
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(15px);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(46, 24, 106, 0.1);
+  box-shadow: 0 8px 32px rgba(255, 107, 107, 0.15);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(254, 118, 36, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.1);
 
   &:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 16px 48px rgba(46, 24, 106, 0.15);
+    box-shadow: 0 16px 48px rgba(255, 107, 107, 0.25);
     background: rgba(255, 255, 255, 1);
-    border: 1px solid rgba(254, 118, 36, 0.3);
+    border: 1px solid rgba(78, 205, 196, 0.3);
   }
 
   @media only screen and (max-width: 768px) {

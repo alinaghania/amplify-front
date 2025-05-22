@@ -1,3 +1,4 @@
+// src/styles/styles.ts - REMPLACE TOUT LE CONTENU
 import { createGlobalStyle } from "styled-components";
 
 export const Styles = createGlobalStyle`
@@ -32,7 +33,7 @@ export const Styles = createGlobalStyle`
     }
 
     a:hover {
-        color: #18216d;
+        color: #FF6B6B;
     }
 
     input,
@@ -47,7 +48,7 @@ export const Styles = createGlobalStyle`
 
         :focus-within {
             background: none;
-            box-shadow: #2e186a 0px 0px 0px 1px;
+            box-shadow: #FF6B6B 0px 0px 0px 1px;
         }
     }
 
@@ -58,7 +59,7 @@ export const Styles = createGlobalStyle`
     h5,
     h6 {
         font-family: 'Motiva Sans Bold', serif;
-        color: #18216d;
+        color: #1E293B;
         font-size: 56px;
         line-height: 1.18;
 
@@ -72,7 +73,7 @@ export const Styles = createGlobalStyle`
     }
 
     p {
-        color: #18216d;
+        color: #1E293B;
         font-size: 21px;        
         line-height: 1.41;
     }
@@ -84,10 +85,10 @@ export const Styles = createGlobalStyle`
     a {
         text-decoration: none;
         outline: none;
-        color: #2E186A;
+        color: #FF6B6B;
 
         :hover {
-            color: #2e186a;
+            color: #E55555;
         }
     }
     

@@ -22,7 +22,6 @@ export const LogoContainer = styled(Link)`
   }
 `;
 
-// 👈 NOUVEAU STYLE POUR TON LOGO
 export const LogoImage = styled("img")`
   max-height: 150px;
   width: auto;
@@ -31,7 +30,7 @@ export const LogoImage = styled("img")`
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    filter: drop-shadow(0 4px 8px rgba(255, 107, 107, 0.3));
   }
 
   @media only screen and (max-width: 768px) {
@@ -69,7 +68,7 @@ export const Burger = styled("div")`
   display: none;
 
   svg {
-    fill: #2e186a;
+    fill: #1E293B;
   }
 `;
 
@@ -87,7 +86,7 @@ export const Menu = styled("h5")`
 
 export const CustomNavLinkSmall = styled(NavLink)`
   font-size: 1.2rem;
-  color: #18216d;
+  color: #1E293B;
   transition: color 0.2s ease-in;
   margin: 0.5rem 2rem;
 
@@ -116,8 +115,8 @@ export const Span = styled("span")`
   &:hover,
   &:active,
   &:focus {
-    color: rgb(255, 130, 92);
+    color: #FF6B6B;
     text-underline-position: under;
-    text-decoration: rgb(255, 130, 92) wavy underline;
+    text-decoration: #FF6B6B wavy underline;
   }
 `;
