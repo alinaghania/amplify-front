@@ -1,3 +1,4 @@
+// src/components/Header/index.tsx - REMPLACE TOUT LE CONTENU
 import { useState } from "react";
 import { Row, Col, Drawer } from "antd";
 import { withTranslation, TFunction } from "react-i18next";
@@ -14,6 +15,7 @@ import {
   Label,
   Outline,
   Span,
+  LogoImage, // 👈 NOUVEAU
 } from "./styles";
 
 const Header = ({ t }: { t: TFunction }) => {
@@ -34,13 +36,13 @@ const Header = ({ t }: { t: TFunction }) => {
     return (
       <>
         <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("À propos")}</Span>
+          <Span>{t("About")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
           <Span>{t("Mission")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Produit")}</Span>
+          <Span>{t("Product")}</Span>
         </CustomNavLinkSmall>
         <CustomNavLinkSmall
           style={{ width: "180px" }}
@@ -59,12 +61,12 @@ const Header = ({ t }: { t: TFunction }) => {
       <Container>
         <Row justify="space-between">
           <LogoContainer to="/" aria-label="homepage">
-            <Span style={{ 
-              fontSize: "32px", 
-              fontWeight: "800", 
-              color: "#800020",
-              letterSpacing: "1px"
-            }}>Amplify</Span>
+            <LogoImage 
+              src="/img/svg/amplify.png" 
+              alt="Amplify" 
+              width="120px" 
+              height="auto" 
+            />
           </LogoContainer>
           <NotHidden>
             <MenuItem />

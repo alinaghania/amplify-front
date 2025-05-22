@@ -1,3 +1,4 @@
+// src/components/Header/styles.ts - REMPLACE TOUT LE CONTENU
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { MenuOutlined } from "@ant-design/icons";
@@ -13,6 +14,33 @@ export const HeaderSection = styled("header")`
 
 export const LogoContainer = styled(Link)`
   display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+`;
+
+// 👈 NOUVEAU STYLE POUR TON LOGO
+export const LogoImage = styled("img")`
+  max-height: 150px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+  }
+
+  @media only screen and (max-width: 768px) {
+    max-height: 40px;
+  }
+
+  @media only screen and (max-width: 480px) {
+    max-height: 35px;
+  }
 `;
 
 export const NavLink = styled("div")`
