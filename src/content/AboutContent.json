@@ -1,15 +1,15 @@
 {
   "title": "Qui sommes-nous ?",
-  "text": "Amplify conçoit des voice bots performants pour aider les restaurants – et notamment les pizzerias – à gérer leurs appels entrants sans effort. Notre technologie permet de prendre des commandes, répondre aux questions fréquentes et améliorer le service client.",
+  "text": "Amplify conçoit des assistants vocaux  pour aider les restaurants à gérer leurs appels. Notre technologie permet de prendre des commandes, répondre aux questions fréquentes et améliorer le service client.",
   "section": [
     {
       "title": "Pourquoi choisir Amplify ?",
-      "content": "Notre assistant vocal s’adapte à votre menu et à vos besoins. Il est rapide, précis et toujours disponible.",
+      "content": "Notre assistant peut gérer plusieurs appels simultanément, recommander des produits pour augmenter vos ventes, et assurer un suivi précis de chaque commande.",
       "icon": "notes.svg"
     },
     {
       "title": "Un service sur-mesure",
-      "content": "Nous travaillons main dans la main avec chaque client pour que l’expérience vocale soit parfaite.",
+      "content": "Nous travaillons main dans la main avec chaque client pour que l’expérience vocale soit parfaite, et nous ecrivons ensemble le brief de votre assistant.",
       "icon": "notes.svg"
     }
   ]

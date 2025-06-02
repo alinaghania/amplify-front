@@ -1,4 +1,4 @@
-// src/components/AudioPlayer/styles.ts 
+// src/components/AudioPlayer/styles.ts - REMPLACE TOUT LE CONTENU
 import styled, { keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
@@ -178,9 +178,15 @@ export const PlayButton = styled.button<{ isPlaying: boolean }>`
   transition: all 0.2s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
-  &:hover {
+  &:hover:not(:disabled) {
     transform: scale(1.05);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
   }
 
   @media only screen and (max-width: 768px) {
@@ -231,40 +237,34 @@ export const VolumeControl = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+`;
 
-  input[type="range"] {
-    width: 60px;
-    height: 4px;
-    background: rgba(30, 41, 59, 0.1);
-    border-radius: 2px;
-    outline: none;
-    cursor: pointer;
+export const VolumeToggle = styled.button<{ isMuted: boolean }>`
+  background: ${({ isMuted }) => isMuted ? '#EF4444' : '#10B981'};
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 40px;
+  text-align: center;
 
-    &::-webkit-slider-thumb {
-      appearance: none;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #FF6B6B;
-      cursor: pointer;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    background: ${({ isMuted }) => isMuted ? '#DC2626' : '#059669'};
+  }
 
-    &::-moz-range-thumb {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: #FF6B6B;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    }
+  &:active {
+    transform: scale(0.95);
   }
 
   @media only screen and (max-width: 768px) {
-    input[type="range"] {
-      width: 40px;
-    }
+    font-size: 11px;
+    padding: 6px 10px;
+    min-width: 35px;
   }
 `;

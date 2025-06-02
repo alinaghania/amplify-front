@@ -39,21 +39,21 @@ const Home = () => {
         content={AboutContent.text}
         section={AboutContent.section}
         icon="tracking.jpeg"
-        id="about"
+        id="À propos"
       />
       <ContentBlock
         direction="right"
         title={MissionContent.title}
         content={MissionContent.text}
         icon="mission.jpeg"
-        id="mission"
+        id="Notre mission"
       />
       <ContentBlock
         direction="left"
         title={ProductContent.title}
         content={ProductContent.text}
-        icon="pic_alina_calling.jpeg"
-        id="product"
+        icon="calling.jpg"
+        id="Notre produit"
       />
       <Contact
         title={ContactContent.title}
