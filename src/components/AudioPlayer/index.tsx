@@ -42,7 +42,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ t }) => {
           setCurrentTime(time);
           console.log('⏰ Timer:', time, 'secondes');
         }
-      }, 500); // Mise à jour toutes les 500ms
+      }, 500);
     } else {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
@@ -62,10 +62,18 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ t }) => {
     if (!audio) return;
 
     const updateDuration = () => {
+      console.log('🔍 Debug durée - audio.duration:', audio.duration);
+      console.log('🔍 Debug durée - readyState:', audio.readyState);
+      console.log('🔍 Debug durée - src:', audio.src);
+      
       if (audio.duration && !isNaN(audio.duration)) {
         const dur = Math.floor(audio.duration);
         setDuration(dur);
-        console.log('📐 Durée totale:', dur, 'secondes');
+        console.log('✅ Durée définie:', dur, 'secondes');
+      } else {
+        console.log('❌ Durée non disponible - Tentative de rechargement...');
+        // Force le rechargement si pas de durée
+        audio.load();
       }
     };
 
@@ -75,15 +83,37 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ t }) => {
       console.log('🏁 Audio terminé');
     };
 
+    const handleError = (e: any) => {
+      console.error('❌ Erreur audio:', e);
+      setIsLoading(false);
+      setIsPlaying(false);
+    };
+
+    // Plus d'événements pour capturer la durée
     audio.addEventListener('loadedmetadata', updateDuration);
+    audio.addEventListener('loadeddata', updateDuration);
+    audio.addEventListener('canplay', updateDuration);
+    audio.addEventListener('durationchange', updateDuration);
     audio.addEventListener('ended', handleEnded);
+    audio.addEventListener('error', handleError);
+    
     audio.volume = isMuted ? 0 : 0.7;
+
+    // Force le chargement initial quand on ouvre
+    if (isOpen && audio.readyState === 0) {
+      console.log('🔄 Force le chargement initial');
+      audio.load();
+    }
 
     return () => {
       audio.removeEventListener('loadedmetadata', updateDuration);
+      audio.removeEventListener('loadeddata', updateDuration);
+      audio.removeEventListener('canplay', updateDuration);
+      audio.removeEventListener('durationchange', updateDuration);
       audio.removeEventListener('ended', handleEnded);
+      audio.removeEventListener('error', handleError);
     };
-  }, [isMuted]);
+  }, [isMuted, isOpen]);
 
   const togglePlay = async () => {
     if (!audioRef.current) return;
@@ -107,6 +137,19 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ t }) => {
     }
   };
 
+  const handleProgressClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!audioRef.current || !duration || duration === 0) return;
+    
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const width = rect.width;
+    const newTime = (clickX / width) * duration;
+    
+    audioRef.current.currentTime = newTime;
+    setCurrentTime(Math.floor(newTime));
+    console.log('🎯 Saut à:', Math.floor(newTime), 'secondes');
+  };
+
   const toggleMute = () => {
     if (!audioRef.current) return;
     
@@ -122,6 +165,10 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ t }) => {
     const seconds = timeInSeconds % 60;
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   };
+
+  // CALCUL SIMPLE DE LA PROGRESSION AVEC DEBUG
+  const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+  console.log('📊 Progression:', progress.toFixed(1), '% - currentTime:', currentTime, 'duration:', duration);
 
   return (
     <AudioPlayerContainer>
@@ -149,9 +196,9 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ t }) => {
             
             <TimeDisplay>{formatTime(currentTime)}</TimeDisplay>
             
-            {/* Barre de progression désactivée */}
-            <ProgressBar style={{ cursor: 'default', opacity: 0.5 }}>
-              <ProgressBarFilled progress={0} />
+            {/* BARRE DE PROGRESSION CLIQUABLE */}
+            <ProgressBar onClick={handleProgressClick} style={{ cursor: 'pointer' }}>
+              <ProgressBarFilled progress={progress} />
             </ProgressBar>
             
             <TimeDisplay>{formatTime(duration)}</TimeDisplay>
