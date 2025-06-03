@@ -1,4 +1,4 @@
-// src/pages/Home/index.tsx - STRUCTURE SANS DOUBLONS
+// src/pages/Home/index.tsx - STRUCTURE FINALE OPTIMISÉE
 import { lazy } from "react";
 import IntroContent from "../../content/IntroContent.json";
 import MiddleBlockContent from "../../content/MiddleBlockContent.json";
@@ -16,13 +16,14 @@ const PartnersBanner = lazy(() => import("../../components/PartnersBanner"));
 const AudioPlayer = lazy(() => import("../../components/AudioPlayer"));
 const EaseOfUse = lazy(() => import("../../components/EaseOfUse"));
 const SecurityCompliance = lazy(() => import("../../components/SecurityCompliance"));
+const MainFeatures = lazy(() => import("../../components/MainFeatures"));
 
 const Home = () => {
   return (
     <Container>
       <ScrollToTop />
       
-      {/* 1. 🎯 ACCROCHE + DÉMO */}
+      {/* 1. 🚀 ACCROCHE PRINCIPALE */}
       <ContentBlock
         direction="right"
         title={IntroContent.title}
@@ -32,17 +33,10 @@ const Home = () => {
         id="intro"
       />
       
-      {/* 2. 🤝 SOCIAL PROOF */}
+      {/* 2. 🤝 PARTNERS BANNER */}
       <PartnersBanner />
       
-      {/* 3. 🚀 CALL TO ACTION */}
-      <MiddleBlock
-        title={MiddleBlockContent.title}
-        content={MiddleBlockContent.text}
-        button={MiddleBlockContent.button}
-      />
-      
-      {/* 4. 📖 À PROPOS */}
+      {/* 3. 👥 QUI SOMMES-NOUS ? */}
       <ContentBlock
         direction="left"
         title={AboutContent.title}
@@ -52,7 +46,7 @@ const Home = () => {
         id="about"
       />
       
-      {/* 5. 🎤 NOTRE MISSION */}
+      {/* 4. 🎯 NOTRE MISSION */}
       <ContentBlock
         direction="right"
         title={MissionContent.title}
@@ -61,7 +55,7 @@ const Home = () => {
         id="mission"
       />
       
-      {/* 6. 💼 NOTRE PRODUIT */}
+      {/* 5. 💼 CE QUE FAIT AMPLIFY */}
       <ContentBlock
         direction="left"
         title={ProductContent.title}
@@ -70,20 +64,30 @@ const Home = () => {
         id="product"
       />
       
-      {/* 7. ⚡ FACILITÉ D'UTILISATION */}
+      {/* 6. ⚡ FONCTIONNALITÉS PRINCIPALES */}
+      <MainFeatures />
+      
+      {/* 7. 🚀 PASSEZ À LA VITESSE SUPÉRIEURE */}
+      <MiddleBlock
+        title={MiddleBlockContent.title}
+        content={MiddleBlockContent.text}
+        button={MiddleBlockContent.button}
+      />
+      
+      {/* 8. 🎨 SIMPLICITÉ AVANT TOUT */}
       <EaseOfUse />
       
-      {/* 8. 🛡️ SÉCURITÉ & CONFIANCE */}
+      {/* 9. 🛡️ SÉCURITÉ & CONFORMITÉ */}
       <SecurityCompliance />
       
-      {/* 9. 📞 CONTACT (final call-to-action) */}
+      {/* 10. 📞 CONTACTEZ-NOUS */}
       <Contact
         title={ContactContent.title}
         content={ContactContent.text}
         id="contact"
       />
       
-      {/* 10. 🎵 AUDIO PLAYER */}
+      {/* 11. 🎵 AUDIO PLAYER */}
       <AudioPlayer />
     </Container>
   );
