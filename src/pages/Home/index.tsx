@@ -13,7 +13,7 @@ const Container = lazy(() => import("../../common/Container"));
 const ScrollToTop = lazy(() => import("../../common/ScrollToTop"));
 const ContentBlock = lazy(() => import("../../components/ContentBlock"));
 const PartnersBanner = lazy(() => import("../../components/PartnersBanner"));
-const AudioPlayer = lazy(() => import("../../components/AudioPlayer")); // 👈 NOUVEAU
+const AudioPlayer = lazy(() => import("../../components/AudioPlayer"));
 
 const Home = () => {
   return (
@@ -39,28 +39,28 @@ const Home = () => {
         content={AboutContent.text}
         section={AboutContent.section}
         icon="tracking.jpeg"
-        id="À propos"
+        id="about"
       />
       <ContentBlock
         direction="right"
         title={MissionContent.title}
         content={MissionContent.text}
         icon="mission.jpeg"
-        id="Notre mission"
+        id="mission"
       />
       <ContentBlock
         direction="left"
         title={ProductContent.title}
         content={ProductContent.text}
         icon="calling.jpg"
-        id="Notre produit"
+        id="product"
       />
       <Contact
         title={ContactContent.title}
         content={ContactContent.text}
         id="contact"
       />
-      <AudioPlayer /> {/* 👈 NOUVEAU COMPOSANT */}
+      <AudioPlayer />
     </Container>
   );
 };
