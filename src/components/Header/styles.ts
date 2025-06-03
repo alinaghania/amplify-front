@@ -23,7 +23,7 @@ export const LogoContainer = styled(Link)`
 `;
 
 export const LogoImage = styled("img")`
-  max-height: 150px;
+  max-height: 160px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));

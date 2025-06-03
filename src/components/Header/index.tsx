@@ -64,7 +64,7 @@ const Header = ({ t }: { t: TFunction }) => {
             <LogoImage 
               src="/img/svg/amplify.png" 
               alt="Amplify" 
-              width="120px" 
+              width="200" 
               height="auto" 
             />
           </LogoContainer>

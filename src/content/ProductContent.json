@@ -1,6 +1,6 @@
 {
   "title": "Ce que fait Amplify",
-  "text": "Notre voice bot répond instantanément aux appels, prend des commandes avec précision, et s'intègre à votre système de caisse ou de livraison.",
+  "text": "Notre voice bot répond instantanément aux appels, prend des rendez-vous/ commandes avec précision, et s'intègre à votre système de systèmes existants ou de services.",
   "section": "Fonctionnalités",
   "features": [
     {
@@ -12,7 +12,7 @@
       "content": "Gère les FAQ : horaires, adresse, moyens de paiement, etc."
     },
     {
-      "title": "Connexion caisse & livraison",
+      "title": "Connexion systèmes existants & services",
       "content": "S'intègre facilement avec vos outils existants."
     }
   ]

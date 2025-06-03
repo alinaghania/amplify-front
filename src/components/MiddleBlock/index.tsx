@@ -1,5 +1,6 @@
+// src/components/MiddleBlock/index.tsx - REMPLACE TOUT LE CONTENU
 import { Row, Col } from "antd";
-import { withTranslation, TFunction } from "react-i18next";
+import { withTranslation } from "react-i18next";
 import { Slide } from "react-awesome-reveal";
 import { Button } from "../../common/Button";
 import { MiddleBlockSection, Content, ContentWrapper } from "./styles";
@@ -7,17 +8,37 @@ import { MiddleBlockSection, Content, ContentWrapper } from "./styles";
 interface MiddleBlockProps {
   title: string;
   content: string;
-  button: string;
-  t: TFunction;
+  button: any;
+  t: any;
 }
 
 const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
-  const scrollTo = (id: string) => {
-    const element = document.getElementById(id) as HTMLDivElement;
-    element.scrollIntoView({
-      behavior: "smooth",
-    });
+  const handleButtonClick = (buttonTitle: string) => {
+    const lowerTitle = buttonTitle.toLowerCase();
+    
+    // Si c'est "Demander une démo" ou "demo" -> Calendly
+    if (lowerTitle.includes('demo') || lowerTitle.includes('démo')) {
+      console.log('🗓️ Redirection MiddleBlock vers Calendly');
+      window.open('https://calendly.com/alinaghani13/30min', '_blank');
+    }
+    // Autres boutons -> scroll vers contact
+    else {
+      const contactElement = document.getElementById('contact');
+      if (contactElement) {
+        contactElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   };
+
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <MiddleBlockSection>
       <Slide direction="up" triggerOnce>
@@ -27,7 +48,11 @@ const MiddleBlock = ({ title, content, button, t }: MiddleBlockProps) => {
               <h6>{t(title)}</h6>
               <Content>{t(content)}</Content>
               {button && (
-                <Button name="submit" onClick={() => scrollTo("mission")}>
+                <Button 
+                  name="submit" 
+                  onClick={() => handleButtonClick(button)}
+                  color="demo"  // Style Chanel Classic aussi
+                >
                   {t(button)}
                 </Button>
               )}

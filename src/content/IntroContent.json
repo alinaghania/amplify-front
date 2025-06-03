@@ -1,13 +1,13 @@
 {
-  "title": "Assistant vocal pour les restaurants",
-  "text": "Automatisez vos commandes par téléphone grâce à un assistant vocal intelligent et ultra-réactif",
+  "title": "Automatisez vos appels avec l'IA",
+  "text": "Transformez votre relation client avec nos agents vocaux intelligents. Disponibles 24h/7j, ils gèrent vos appels entrants et sortants avec une qualité humaine exceptionnelle.",
   "button": [
     {
-      "title": "Demander une démo"
+      "title": "Demander une démo",
+      "color": "demo"
     },
     {
-      "title": "En savoir plus",
-      "color": "#fff"
+      "title": "En savoir plus"
     }
   ]
 }
